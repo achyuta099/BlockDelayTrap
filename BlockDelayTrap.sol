@@ -7,7 +7,7 @@ contract BlockDelayTrap is ITrap {
     uint256 public constant BLOCK_DELAY_THRESHOLD = 50;
     uint8   public constant MIN_SAMPLES = 2;
 
-    address public constant TARGET = 0x4f97469df5A96E6b75E562e0792efcAc599D4B9e;
+    address public constant TARGET = YOUR_WALLET_ADDRESS;
 
     function collect() external view override returns (bytes memory) {
         return abi.encode(block.number, block.timestamp);
