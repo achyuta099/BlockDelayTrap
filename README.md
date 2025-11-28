@@ -40,7 +40,7 @@ contract BlockDelayTrap is ITrap {
 }
 ```
 
-BlockDelayResponder
+BlockDelayResponder.sol
 ```
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
@@ -59,7 +59,7 @@ Deployed to: 0x598823fF8BAD99bfF02882757af41e39fFA08d81
 Transaction hash: 0x3acf4cfe6ff9845aee7e976532ed049833abd7100ebfbefa550d4b1f60747578
 ```
 
-ITrap
+ITrap.sol
 ```
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
@@ -81,7 +81,7 @@ Verifying BlockDelayTrap in the Hoodi test network may take some time, as delays
 To demonstrate the full Drosera workflow, a simplified version of TestAlwaysTrap has been added, in which shouldRespond(...) always returns true and generates a payload in the format (TARGET, prevBlock, currBlock, delay). 
 This allows Drosera to complete the entire process — aggregating signatures, sending a submit transaction, calling response_contract.handleAnomaly(bytes), and recording the event from the responder in the blockchain. Thus, the correctness of the integration is confirmed on real blocks without artificial manipulation of the network.
 
-TestAlwaysTrap
+TestAlwaysTrap.sol
 ```
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
