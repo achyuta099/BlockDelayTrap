@@ -12,7 +12,7 @@ contract BlockDelayTrap is ITrap {
     uint256 public constant BLOCK_DELAY_THRESHOLD = 50;
     uint8   public constant MIN_SAMPLES = 2;
 
-    address public constant TARGET = 0x4f97469df5A96E6b75E562e0792efcAc599D4B9e;
+    address public constant TARGET = YOUR_WALLET_ADDRESS;
 
     function collect() external view override returns (bytes memory) {
         return abi.encode(block.number, block.timestamp);
@@ -54,9 +54,6 @@ contract BlockDelayResponder {
         emit DelayDetected(target, prevBlock, currBlock, delay);
     }
 }
-Deployer: 0x4f97469df5A96E6b75E562e0792efcAc599D4B9e
-Deployed to: 0x598823fF8BAD99bfF02882757af41e39fFA08d81
-Transaction hash: 0x3acf4cfe6ff9845aee7e976532ed049833abd7100ebfbefa550d4b1f60747578
 ```
 
 ITrap.sol
@@ -89,7 +86,7 @@ pragma solidity ^0.8.20;
 import "./ITrap.sol";
 
 contract TestAlwaysTrap is ITrap {
-    address public constant TARGET = 0x4f97469df5A96E6b75E562e0792efcAc599D4B9e;
+    address public constant TARGET = YOUR_WALLET_ADDRESS;
 
     constructor() {}
 
